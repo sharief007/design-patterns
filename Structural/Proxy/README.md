@@ -8,7 +8,7 @@ The Proxy design pattern is a structural design pattern that provides a surrogat
 - **RealSubject:** This is the actual object that the Proxy represents. It implements the operations defined in the Subject interface.
 - **Proxy:** The Proxy class implements the same interface as the RealSubject. It holds a reference to the RealSubject and controls access to it. The Proxy can add additional behavior before or after invoking the RealSubject's methods.
 
-## UML Class Diagram
+### UML Class Diagram
 
 ```mermaid
 classDiagram
@@ -74,7 +74,7 @@ classDiagram
 
 ```
 
-## Implementation {.tabset}
+### Implementation
 
 ### Java
 

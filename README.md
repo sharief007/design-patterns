@@ -10,3 +10,4 @@ Design Patterns
 ## Structural
 
 1. [Proxy](./Structural/Proxy)
+2. [Adapter](./Structural/Adapter)
