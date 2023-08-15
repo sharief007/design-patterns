@@ -77,6 +77,8 @@ public class Main {
 }
 ```
 
+### Python
+
 ```python
 # Target Interface
 class AudioPlayer:
@@ -105,6 +107,8 @@ if __name__ == "__main__":
     main()
 
 ```
+
+### Go
 
 ```go
 package main
