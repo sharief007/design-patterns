@@ -17,8 +17,61 @@ The key components of the Decorator pattern are:
 4. **Concrete Decorator**: These are classes that extend the Decorator class and provide concrete implementations of additional behaviors. They can add new methods, fields, or modify the behavior of the wrapped Component.
 
 ### Example
+Let's take the example of a beverage ordering system. We have a base component `Beverage` with two concrete components: `Coffee` and `Tea`.
 
-Let's take the example of a beverage ordering system. We have a base component `Beverage` with two concrete components: `Coffee` and `Tea`. We want to add decorators for adding additional options like milk, sugar, and whipped cream.
+```mermaid
+classDiagram
+  class Beverage {
+    <<Interface>> Beverage
+    +getDescription() : String
+    +cost() : double
+  }
+
+  class Coffee {
+    +getDescription() : String
+    +cost() : double
+  }
+
+  class Tea {
+    +getDescription() : String
+    +cost() : double
+  }
+
+  Beverage <|.. Coffee
+  Beverage <|.. Tea
+```
+We want to add decorators for adding additional options like milk, sugar, and whipped cream.
+
+```mermaid
+classDiagram
+  class BeverageDecorator {
+    -beverage : Beverage
+    +BeverageDecorator(beverage: Beverage)
+    +getDescription() : String
+  }
+
+  class MilkDecorator {
+    +MilkDecorator(beverage: Beverage)
+    +getDescription() : String
+    +cost() : double
+  }
+
+  class SugarDecorator {
+    +SugarDecorator(beverage: Beverage)
+    +getDescription() : String
+    +cost() : double
+  }
+
+  class Beverage {
+    <<Interface>> Beverage
+    +getDescription() : String
+    +cost() : double
+  }
+  
+  BeverageDecorator <|-- MilkDecorator
+  BeverageDecorator <|-- SugarDecorator
+  BeverageDecorator o-- Beverage
+```
 
 1. **Component (Beverage)**:
 ```java
@@ -108,10 +161,9 @@ System.out.println(coffee.cost()); // Output: 2.7
 In this example, the Decorator pattern allowed us to dynamically add milk and sugar as decorators to the coffee object, altering its description and cost without changing the original Coffee class.
 
 ### Example - 2
- 
+
 ```mermaid
 classDiagram
-  namespace concreteclasses {
     class Pizza {
         <<Interface>>
         +getDescription() : String
@@ -127,9 +179,7 @@ classDiagram
         +getDescription() : String
         +cost() : double
     }
-  }
   
-  namespace decorators {
     class PizzaDecorator {
         -pizza : Pizza
         +PizzaDecorator(pizza: Pizza)
@@ -153,15 +203,14 @@ classDiagram
         +getDescription() : String
         +cost() : double
     }
-  }
 
-  Pizza <|.. MargheritaPizza
-  Pizza <|.. PepperoniPizza
+    Pizza <|.. MargheritaPizza
+    Pizza <|.. PepperoniPizza
 
-  PizzaDecorator <|-- CheeseTopping
-  PizzaDecorator <|-- MushroomTopping
-  PizzaDecorator <|-- JalapenoTopping
-  PizzaDecorator o-- Pizza
+    PizzaDecorator <|-- CheeseTopping
+    PizzaDecorator <|-- MushroomTopping
+    PizzaDecorator <|-- JalapenoTopping
+    PizzaDecorator o-- Pizza
 ```
 
 ### Implementation
