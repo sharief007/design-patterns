@@ -4,12 +4,13 @@ Design Patterns
 
 ## Creational
 
-1. [Singleton](./Creational/Singleton/)
-2. [Factory](./Creational/Factory/)
+1. [Factory](./Creational/Factory/)
+2. [Singleton](./Creational/Singleton/)
 
 ## Structural
 
-1. [Proxy](./Structural/Proxy)
-2. [Adapter](./Structural/Adapter)
-3. [Composite](./Structural/Composite/)
+1. [Adapter](./Structural/Adapter)
+2. [Composite](./Structural/Composite/)
+3. [Decorator](./Structural/Decorator/)
 4. [Facade](./Structural/Facade/)
+5. [Proxy](./Structural/Proxy)
