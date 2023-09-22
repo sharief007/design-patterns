@@ -14,3 +14,7 @@ Design Patterns
 3. [Decorator](./Structural/Decorator/)
 4. [Facade](./Structural/Facade/)
 5. [Proxy](./Structural/Proxy)
+
+## Behavioral
+
+1. [Chain of Responsibility](./Behavioral/Chain%20of%20responsibility/)
